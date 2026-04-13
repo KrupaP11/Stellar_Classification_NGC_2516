@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[top=0.5in, bottom=0.5in]{geometry}
+\usepackage{amsmath}
+
+\begin{document}
+\begin{center}
+    \LARGE{Machine Learning Project Proposal - 2}\\
+    \large{Krupa Pothiwala}
+\end{center}
+
+\section{Goals of Study}
+Feed a model raw photometric and astrometric data about stars in a NGC 2516 open cluster, and see if unsupervised methods can rediscover known stellar populations and reproduce the Hertzsprung-Russell (HR) diagram; without ever being told what a "main sequence" or "red giant" is.
+
+\section{Data Source and cleaning/pre-processing}
+I will be using Gaia DR3 for my data source. Currently Gaia shows 1,500–2,000 stars in that region. I intend on using all the stars in the cluster.\\
+\\
+I have not yet downloaded the data, but based on the Gaia DR3 documentation I anticipate the following preprocessing steps:\\
+\textbf{Handling missing values} — Not every star in Gaia DR3 has all fields populated. I plan to either drop stars missing too many features, or drop the sparsely populated columns entirely.\\
+\textbf{Computing absolute magnitude} — Gaia provides apparent magnitude, parallax, and extinction. I will derive absolute magnitude using the distance modulus $m - M = 5\log_{10}(D/10\text{pc}) + A$, giving  $M_G = G - 5\log_{10}(1000/\varpi) + 5 - A_G$, where $\varpi$ is parallax in milliarcseconds and $A_G$ is the G-band extinction provided by Gaia DR3.\\
+\textbf{Feature normalization} — Since features have very different scales (e.g. parallax in mas vs. temperature in Kelvin), I will standardize all features before clustering.
+
+\section{Models to use}
+This project will use unsupervised learning techniques, specifically dimensionality reduction and clustering.\\
+\textbf{Dimensionality Reduction}\\
+{PCA (Principal Component Analysis)} —  PCA reduces high-dimensional data by finding directions of maximum variance. I plan to use this as a starting point to understand which features matter most.\\
+{UMAP} — A non-linear dimensionality reduction technique I came across while researching this project. I plan to learn this and use it to visualize the data in 2D.
+\\ \\
+\textbf{Clustering}\\
+HDBSCAN — A density-based clustering method that does not require specifying the number of clusters ahead of time. I chose this because some stars in the data will be background field stars that do not belong to the cluster, and HDBSCAN can label those as outliers rather than forcing them into a group.
+\\ \\
+I plan to validate results by checking whether the clusters recovered by these methods correspond to known stellar populations when plotted on an HR diagram.
+\end{document}
