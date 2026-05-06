@@ -1,9 +1,8 @@
 # Machine Learning Stellar Classification
 ### Rediscovering the HR Diagram - NGC 2516
 
-
 An unsupervised machine learning project that rediscovers the structure of the Hertzsprung-Russell diagram from raw, unlabelled stellar data, with no prior knowledge of stellar physics provided to the model. Star data for the open cluster NGC 2516 is retrieved from the ESA Gaia DR3 catalog, and PCA is applied to four raw photometric and astrometric features. The model independently recovers the primary structure of the HR diagram, with the two principal components mapping directly onto stellar brightness and distance. For full methodology and results, see the [project report](https://github.com/KrupaP11/Stellar_Classification_NGC_2516/blob/main/report/ML_Stellar_Classification_Report.pdf) or the [presentation slides](https://github.com/KrupaP11/Stellar_Classification_NGC_2516/blob/main/Slides/Stellar_Classification_Slides.pdf).
----
+
 
 ## Overview
 
