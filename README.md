@@ -1,5 +1,5 @@
 # Machine Learning Stellar Classification
-### Rediscovering the HR Diagram — NGC 2516
+### Rediscovering the HR Diagram - NGC 2516
 
 **Krupa Pothiwala · Florida Institute of Technology · May 2026**
 
@@ -54,7 +54,7 @@ Star data for the open cluster NGC 2516 was retrieved from the ESA Gaia DR3 cata
 **Features used:** apparent magnitudes in G, BP, and RP bands + parallax
 
 ### Why not UMAP + HDBSCAN?
-UMAP and HDBSCAN were applied on top of the PCA output but added no meaningful scientific insight. HDBSCAN traced UMAP's layout geometry rather than genuine density structure in the data — a form of **pipeline bias**. Since the goal was to recover a continuous physical structure rather than partition stars into discrete groups, PCA alone was adopted as the final method.
+UMAP and HDBSCAN were applied on top of the PCA output but added no meaningful scientific insight. HDBSCAN traced UMAP's layout geometry rather than genuine density structure in the data; a form of **pipeline bias**. Since the goal was to recover a continuous physical structure rather than partition stars into discrete groups, PCA alone was adopted as the final method.
 
 ---
 
@@ -100,9 +100,9 @@ pip install astroquery astropy pandas numpy matplotlib scikit-learn umap-learn h
 ├── hr_diagram_pca.png            # Result plot (PCA + HR diagram)
 ├── main.py                       # Full pipeline script
 ├── report/
-│   └── main.tex                  # Written report (LaTeX)
+│   └── main.tex                  # Written report (LaTeX) also see pdf
 └── slides/
-    └── presentation.tex          # Beamer presentation (LaTeX)
+    └── main.tex          # Beamer presentation (LaTeX) also see pdf
 ```
 
 ---
